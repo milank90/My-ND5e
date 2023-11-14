@@ -1,0 +1,520 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+    <link rel="stylesheet" href="NDe.css">
+
+
+    <script src="NDe.js"></script>
+
+</head>
+<div class="container">
+
+  <div class="row">
+    <div class="col-4">
+      <br>
+      <br>
+      <table class="table">
+        <tr>
+          <td><input type="text" class="form-control" placeholder="Name" id="charName"></td>
+        </tr>
+        <tr>
+          <td class="font11">CHARACTER NAME</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-6">
+      <table class="table">
+        <tr>
+          <td><input type="text" class="form-control short-input" size="60" placeholder="Class" id="charClass"></td>
+          <td><input type="text" class="form-control short-input" size="60" placeholder="Sub Class" id="charSClass"></td>
+          <td><input type="text" class="form-control short-input" placeholder="Background" id="charBGR"></td>
+        </tr>
+        <tr>
+          <td class="font11">CLASS</td>
+          <td class="font11">SUB CLASS</td>
+          <td class="font11">BACKGROUND</td>
+        </tr>
+        <table class="table">
+          <tr>
+            <td><input type="text" class="form-control short-input" size="10" placeholder="Clan" id="charClan"></td>
+            <td><input type="text" class="form-control short-input" size="10" placeholder="Alignment" id="charAlign"></td>
+            <td><input type="number" class="form-control short-input" size="1" value="1" id="charEXP"></td>
+            <td><input type="number" class="form-control short-input" size="1" placeholder="1000" id="charNL"></td>
+          </tr>
+          <tr>
+            <td class="font11">CLAN</td>
+            <td class="font11">ALIGNMENT</td>
+            <td class="font11">EXPERIENCE</td>
+            <td class="font11">NEXT LEVEL</td>
+          </tr>
+        </table>
+      </table>
+    </div>
+    <div class="c-col-1">
+      <br>
+      <br>
+      <table class="table">
+        <tr>
+          <td><input type="number" class="form-control" value="1" id="charLVL" min="1" max="20" onchange="charLVLChange();"></td>
+        </tr>
+        <tr>
+          <td class="font11">LEVEL</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+
+    <div class="col-1">
+
+      <table class="table">
+        <tr>
+          <th>Ability</th>
+        </tr>
+        <tr>
+          <td>Strength
+            <br><input type="number" class="statsMod" placeholder="0" id="strMod">
+            <br><input type="number" value="10" id="strScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+        <tr>
+          <td>Dexterity
+            <br><input type="number" class="statsMod" placeholder="0" id="dexMod">
+            <br><input type="number" value="10" id="dexScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+        <tr>
+          <td>Constitution
+            <br><input type="number" class="statsMod" placeholder="0" id="conMod">
+            <br><input type="number" value="10" id="conScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+        <tr>
+          <td>Intelligence
+            <br><input type="number" class="statsMod" placeholder="0" id="intMod">
+            <br><input type="number" value="10" id="intScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+        <tr>
+          <td>Wisdom
+            <br><input type="number" class="statsMod" placeholder="0" id="wisMod">
+            <br><input type="number" value="10" id="wisScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+        <tr>
+          <td>Charisma
+            <br><input type="number" class="statsMod" placeholder="0" id="chaMod">
+            <br><input type="number" value="10" id="chaScore" onchange="updateModifiers()">
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <div class="col-3 ml-4">
+      <table class="table">
+        <tr>
+          <td><input type="checkbox" id="WoF" style="width: 70px" class="form-check-input custom-checkbox"></td>
+          <td>Will of Fire</td>
+        </tr>
+        <tr>
+          <td><input type="number" class="form-control" value="3" id="profBonus"></td>
+          <td>Proficiency Bonus</td>
+
+        </tr>
+      </table>
+
+      <div class="col-3">
+        <table class="table">
+          <tr>
+            <th class="font13" colspan="3">SAVING THROWS</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="strST" class="form-check-input"></td>
+            <td><input type="number" style="width: 60px;" class="form-control skillMods" value="0" id="strSTMod"></td>
+            <td>Strength</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" id="dexST" class="form-check-input">
+            </td>
+            <td><input type="number" style="width: 60px;" class="form-control short-input" value="0" id="dexSTMod"></td>
+            <td>Dexterity</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" id="conST" class="form-check-input">
+            </td>
+            <td><input type="number" style="width: 60px;" class="form-control short-input" value="0" id="conSTMod"></td>
+            <td>Constitution</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" id="intST" class="form-check-input">
+            </td>
+            <td><input type="number" style="width: 60px;" class="form-control short-input" value="0" id="intSTMod"></td>
+            <td>Intelligence</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" id="wisST" class="form-check-input">
+            </td>
+            <td><input type="number" class="form-control short-input" value="0" id="wisSTMod"></td>
+            <td>Wisdom</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" id="chaST" class="form-check-input">
+            </td>
+            <td><input type="number" style="width: 60px;" class="form-control short-input" value="0" id="chaSTMod"></td>
+
+            <td>Charisma</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-3">
+        <table class="table narrpadd">
+          <tr>
+            <th class="font13" style="text-align: center;" colspan="4">SKILLS</th>
+          </tr>
+          <tr>
+            <th class="font13">P</th>
+            <th class="font13">E</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="acroP" class="form-check-input"></td>
+            <td><input type="checkbox" id="acroE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="acroMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 40px;">Acrobatics</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="acroDrpd">
+                <option value="option1">Str</option>
+                <option value="option2" selected>Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="animP" class="form-check-input"></td>
+            <td><input type="checkbox" id="animE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="animMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Animal Handling</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="animDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="athlP" class="form-check-input"></td>
+            <td><input type="checkbox" id="athlE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="athlMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Athletics</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="athlDrpd">
+                <option value="option1" selected>Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="chacontrP" class="form-check-input"></td>
+            <td><input type="checkbox" id="chacontrE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="chacontrMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Chakra Control</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="chacontrDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3" selected>Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="craftP" class="form-check-input"></td>
+            <td><input type="checkbox" id="craftE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="craftMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Crafting</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="craftDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3" selected>Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="decP" class="form-check-input"></td>
+            <td><input type="checkbox" id="decE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="dectMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Deception</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="decDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3" selected>Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="illuP" class="form-check-input"></td>
+            <td><input type="checkbox" id="illuE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="illuMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Illusions</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="illuDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="insP" class="form-check-input"></td>
+            <td><input type="checkbox" id="insE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="insMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Insight</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="insDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="histP" class="form-check-input"></td>
+            <td><input type="checkbox" id="histE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="histMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">History</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="histDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3" selected>Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="intimP" class="form-check-input"></td>
+            <td><input type="checkbox" id="intimE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="intimMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Intimidation</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="intimDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3" selected>Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="investP" class="form-check-input"></td>
+            <td><input type="checkbox" id="investE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="investMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Investigation</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="investDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3" selected>Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="medicP" class="form-check-input"></td>
+            <td><input type="checkbox" id="medicE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="medicMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Medicine</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="medicDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="natP" class="form-check-input"></td>
+            <td><input type="checkbox" id="natE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="natMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Nature</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="natDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3" selected>Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="ninshP" class="form-check-input"></td>
+            <td><input type="checkbox" id="ninshE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="ninshMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Ninshou</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="ninshDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3" selected>Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="percP" class="form-check-input"></td>
+            <td><input type="checkbox" id="percE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="percMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Perception</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="percDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="perfP" class="form-check-input"></td>
+            <td><input type="checkbox" id="perfE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="perfMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Performance</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="perfDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3" selected>Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="persP" class="form-check-input"></td>
+            <td><input type="checkbox" id="persE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="persMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Persuasion</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="persDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3" selected>Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="sohP" class="form-check-input"></td>
+            <td><input type="checkbox" id="sohE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="sohMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Sleight of Hand</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="sohDrpd">
+                <option value="option1">Str</option>
+                <option value="option2" selected>Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="stealthP" class="form-check-input"></td>
+            <td><input type="checkbox" id="stealthE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="stealthMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Stealth</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="stealthDrpd">
+                <option value="option1">Str</option>
+                <option value="option2" selected>Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="survP" class="form-check-input"></td>
+            <td><input type="checkbox" id="survE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="survMod"></td>
+            <td style="vertical-align: middle; font-size: 12px; padding-left: 2px; padding-right: 2px;">Survival</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="survDrpd">
+                <option value="option1">Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3" selected>Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="martP" class="form-check-input"></td>
+            <td><input type="checkbox" id="martE" class="form-check-input"></td>
+            <td><input type="number" style="width: 45px;" class="skillMods" value="0" id="martMod"></td>
+            <td style="font-size: 12px; padding-left: 2px; padding-right: 2px;">Martial Arts</td>
+            <td><select class="skillDRPD" style="width: 43px;" id="martDrpd">
+                <option value="option1" selected>Str</option>
+                <option value="option2">Dex</option>
+                <option value="option3">Con</option>
+                <option value="option3">Int</option>
+                <option value="option3">Wis</option>
+                <option value="option3">Cha</option>
+              </select></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-3">
+      <table class="table">
+        <tr>
+          <th>
+            <p class="toprow1" id="AC">10</p>
+          </th>
+          <th>
+            <p class="toprow2" id="INIT">+1</p>
+          </th>
+          <th>
+            <p class="toprow2" id="SPEED">30ft</p>
+          </th>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td class="maxHPCP">Max HP:</td>
+          <td class="maxHPCP"><input type="number" style="width: 70px; padding: 2px;" class="form-control short-input" value="0" id="maxHP"></td>
+          <td class="maxHPCP">Max CP:</td>
+          <td class="maxHPCP"><input type="number" style="width: 70px; padding: 2px;" class="form-control short-input" value="0" id="maxCP"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="border-top: none; padding-top: 1px; padding-bottom: 1px;"><input type="number" class="form-control currHPCP" value="0" id="maxHP">
+          <td colspan="2" style="border-top: none; padding-top: 1px; padding-bottom: 1px;"><input type="number" class="form-control currHPCP" value="0" id="maxCP">
+        </tr>
+        <tr>
+          <th colspan="2" class="maxHPCP infocell" style="text-align: center;">Current HP</th>
+          <th colspan="2" class="maxHPCP infocell" style="text-align: center;">Current CP</th>
+        </tr>
+        <tr>
+          <td colspan="2" style="border-top: none; padding-bottom: 1px;"><input type="number" class="form-control currHPCP" value="0" id="maxHP">
+          <td colspan="2" style="border-top: none; padding-bottom: 1px;"><input type="number" class="form-control currHPCP" value="0" id="maxCP">
+        </tr>
+        <tr>
+          <th colspan="2" class="maxHPCP infocell" style="text-align: center;">Temporary HP</th>
+          <th colspan="2" class="maxHPCP infocell" style="text-align: center;">Temporary CP</th>
+        </tr>
+    </div>
+  </div>

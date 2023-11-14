@@ -1,0 +1,92 @@
+.table input {
+    width: 100%;
+  }
+  .short-input {
+    height: 25px;
+  }
+  .font11 {
+    font-size: 11px;
+  }
+  .font13 {
+    font-size: 13px;
+  }
+  .c-col-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  .big-cell {
+    height: 50px;
+    width: 70px;
+  }
+  .custom-checkbox {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+  }
+  .statsMod {
+    width: 60px;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+    border: none;
+  }
+  .skillMods {
+    border-color: #ced4da;
+    height: 25px;
+    padding: 2px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .skillDRPD {
+    padding-left: 2px;
+    border: none;
+    background: none;
+    font-size: 12px;
+    color: #7a7a7a;
+  }
+  .table.narrpadd td {
+    height: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .toprow1 {
+    width: 60px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+  }
+  
+  .toprow2 {
+    width: 60px;
+    height: 50px;
+    font-size: 30px;
+    padding-top: 8px;
+    border: none;
+  }
+  .maxHPCP {
+    font-size: 12px;
+  }
+  .form-control.currHPCP {
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+  .maxHPCP.infocell {
+    border-top: none;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ced4da;
+  }
+  
