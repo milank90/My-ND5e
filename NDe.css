@@ -1,5 +1,5 @@
 .table input {
-    width: 100%;
+    width: %;
   }
   .short-input {
     height: 25px;
@@ -23,15 +23,20 @@
     height: 20px; /* Adjust the height as needed */
   }
   .statsMod {
-    width: 60px;
+    
     height: 50px;
     font-size: 35px;
     text-align: center;
     border: none;
   }
+  .modsSmall {
+  color: #495057; 
+  font-size: 15px;
+  font-weight: bold;
+  }
   .skillMods {
     border-color: #ced4da;
-    height: 25px;
+    height: 20px;
     padding: 2px;
     line-height: 1.5;
     color: #495057;
@@ -43,6 +48,7 @@
   }
   .skillDRPD {
     padding-left: 2px;
+    width: 44px;
     border: none;
     background: none;
     font-size: 12px;
@@ -57,20 +63,27 @@
   }
   
   .toprow1 {
-    width: 60px;
-    height: 50px;
-    font-size: 40px;
+    width: 75px;
+    height: 35px;
+    font-size: 35px;
     text-align: center;
     vertical-align: middle;
+    padding-bottom: 0px;
     border: none;
   }
   
   .toprow2 {
-    width: 60px;
-    height: 50px;
+    width: 75px;
+    height: 35px;
     font-size: 30px;
-    padding-top: 8px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    text-align: center;
     border: none;
+  }
+  .toprow3 {
+    font-size: 12px;
+    text-align: center;
   }
   .maxHPCP {
     font-size: 12px;
@@ -89,4 +102,75 @@
     padding-bottom: 5px;
     border-bottom: 1px solid #ced4da;
   }
-  
+  .table.skills tr td:nth-child(4) { 
+    padding-left: 2px; 
+    padding-right: 2px;
+    vertical-align: middle;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .table.skills tr td:nth-child(1) { 
+    width: 100px;
+    padding-left: 1px;
+    padding-top: 2px;
+    text-align: left;
+  }
+  .table.skills tr td:nth-child(2) { 
+    padding-left: 1px;
+    padding-top: 2px;
+    text-align: left;
+  }
+  .table.skills tr td:nth-child(3) { 
+    vertical-align: middle;
+  }
+  .table.skills td {
+    height: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .col-.cust {
+    width: 250px;
+    margin-left: 50px;
+   }
+   .col-.cust2 {
+    width: 300px;
+   }
+
+   .table.saves td { 
+    padding-top: 3px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    font-size: 14px;
+    vertical-align: middle;
+    border-collapse: collapse;
+    border-spacing: 0;
+   }
+   .table.saves tr td:nth-child(1) { 
+    vertical-align: top;
+    padding-left: 0px;
+    padding-right: 35px;
+   }
+   .table.saves tr td:nth-child(2) {     
+    padding-right: 15px;
+   }
+   .table.saves tr td:nth-child(3) {     
+    padding-left: 0px;
+    padding-right: 85px;
+   }
+   .statModsinp {
+    border-color: #ced4da;
+    width: 30px;
+    height: 25px;
+    padding: 2px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding-left:18px;
+  }
